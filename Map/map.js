@@ -91,13 +91,14 @@ var circle11 = L.circle([46.5, -75.24], {
 //     [48.1, -74.99]
 // ]).addTo(map);
 
-var osm = L.tileLayer('whiteb.png', {
+var osm = L.tileLayer('bsqaure.jpg', {
     minZoom: 5,
     mazZoom: 13,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
-var imageUrl = 'map.png';
+//var imageUrl = 'map.png';
+var imageUrl = 'RealMap.png';
 var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
 var altText = 'map of thing';
 var corner1 = L.latLng(40, -86.602603),
