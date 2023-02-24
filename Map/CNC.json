@@ -1,0 +1,244 @@
+[
+    {
+        "CNC": [
+    
+        {"id":1,
+        "name": "VRX-0",
+        "SMB": "FMF-SMARTBOX3",
+        "AdapterPort": "7878",
+        "AgentPort": "5000"},
+    
+        {"id":2,
+        "name": "VRX-1",
+        "SMB": "FMF-SMARTBOX3",
+        "AdapterPort": "7878",
+        "AgentPort": "5001"},
+    
+        {"id":3,
+        "name": "V100-0",
+        "SMB": "none",
+        "AdapterPort": "7878",
+        "AgentPort": "5089"},
+
+        {"id":4,
+        "name": "V100-1",
+        "SMB": "FMF-SMARTBOX8",
+        "AdapterPort": "7878",
+        "AgentPort": "5001"},
+
+        {"id":5,
+        "name": "V100-2",
+        "SMB": "FMF-SMARTBOX8",
+        "AdapterPort": "7878",
+        "AgentPort": "5002"},
+
+        {"id":6,
+        "name": "V100-3",
+        "SMB": "FMF-SMARTBOX8",
+        "AdapterPort": "7878",
+        "AgentPort": "5004"},
+
+        {"id":7,
+        "name": "i-400",
+        "SMB": "FMF-SMARTBOX2",
+        "AdapterPort": "7878",
+        "AgentPort": "5000"},
+
+        {"id":8,
+        "name": "i-400ST",
+        "SMB": "FMF-SMARTBOX2",
+        "AdapterPort": "7878",
+        "AgentPort": "5001"},
+
+        {"id":9,
+        "name": "i-300S",
+        "SMB": "FMF-SMARTBOX2",
+        "AdapterPort": "7878",
+        "AgentPort": "5002"},
+
+        {"id":10,
+        "name": "QTN450MYLBB",
+        "SMB": "FMF-SMARTBOX2",
+        "AdapterPort": "7878",
+        "AgentPort": "5003"},
+
+        {"id":11,
+        "name": "QTZ250MY2T",
+        "SMB": "FMF-SMARTBOX2",
+        "AdapterPort": "7878",
+        "AgentPort": "5004"},
+
+        {"id":12,
+        "name": "e-500-0",
+        "SMB": "FMF-SMARTBOX2",
+        "AdapterPort": "7878",
+        "AgentPort": "5005"},
+
+        {"id":13,
+        "name": "e-500-1",
+        "SMB": "FMF-SMARTBOX2",
+        "AdapterPort": "7878",
+        "AgentPort": "5006"},
+
+        {"id":14,
+        "name": "QTN350M",
+        "SMB": "FMF-SMARTBOX2",
+        "AdapterPort": "7878",
+        "AgentPort": "5007"},
+
+        {"id":15,
+        "name": "e-1060",
+        "SMB": "FMF-SMARTBOX1",
+        "AdapterPort": "7878",
+        "AgentPort": "5000"},
+
+        {"id":16,
+        "name": "HCN8800-0",
+        "SMB": "FMF-SMARTBOX1",
+        "AdapterPort": "7878",
+        "AgentPort": "5001"},
+
+        {"id":17,
+        "name": "HCN8800-1",
+        "SMB": "FMF-SMARTBOX1",
+        "AdapterPort": "7878",
+        "AgentPort": "5002"},
+
+        {"id":18,
+        "name": "Orbitec",
+        "SMB": "FMF-SMARTBOX1",
+        "AdapterPort": "7878",
+        "AgentPort": "5003"},
+
+        {"id":19,
+        "name": "MU10800",
+        "SMB": "FMF-SMARTBOX9",
+        "AdapterPort": "7878",
+        "AgentPort": "5000"},
+    
+        {"id":20,
+        "name": "HCN16000Q MFMS18-MC1",
+        "SMB": "FMF-SMARTBOX10",
+        "AdapterPort": "7878",
+        "AgentPort": "5000"},
+    
+        {"id":21,
+        "name": "SHIGIYA GP-55",
+        "SMB": "FMF-SMARTBOX5",
+        "AdapterPort": "7878",
+        "AgentPort": "5000"},
+
+        {"id":22,
+        "name": "SHIGIYA GP-85",
+        "SMB": "FMF-SMARTBOX5",
+        "AdapterPort": "7878",
+        "AgentPort": "5001"},
+
+        {"id":23,
+        "name": "SHIGIYA GP-30B",
+        "SMB": "FMF-SMARTBOX5",
+        "AdapterPort": "7878",
+        "AgentPort": "5002"},
+
+        {"id":24,
+        "name": "Toyoda",
+        "SMB": "FMF-SMARTBOX5",
+        "AdapterPort": "7878",
+        "AgentPort": "5003"},
+
+        {"id":25,
+        "name": "Milacron ID",
+        "SMB": "FMF-SMARTBOX5",
+        "AdapterPort": "7878",
+        "AgentPort": "5004"},
+
+        {"id":26,
+        "name": "Toyo NC ID",
+        "SMB": "FMF-SMARTBOX5",
+        "AdapterPort": "7878",
+        "AgentPort": "5006"},
+
+        {"id":27,
+        "name": "Toyo TVG-90C",
+        "SMB": "FMF-SMARTBOX5",
+        "AdapterPort": "7878",
+        "AgentPort": "5008"},
+
+        {"id":28,
+        "name": "QTN400",
+        "SMB": "FMF-SMARTBOX5",
+        "AdapterPort": "7878",
+        "AgentPort": "5009"},
+
+        {"id":29,
+        "name": "FJV-35/60",
+        "SMB": "FMF-SMARTBOX11",
+        "AdapterPort": "7878",
+        "AgentPort": "5000"},
+
+        {"id":30,
+        "name": "FJV-35/120",
+        "SMB": "FMF-SMARTBOX11",
+        "AdapterPort": "7878",
+        "AgentPort": "5001"},
+
+        {"id":31,
+        "name": "V140n5x",
+        "SMB": "FMF-SMARTBOX11",
+        "AdapterPort": "7878",
+        "AgentPort": "5002"},
+
+        {"id":32,
+        "name": "MU8800",
+        "SMB": "FMF-SMARTBOX11",
+        "AdapterPort": "7878",
+        "AgentPort": "5003"},
+
+        {"id":33,
+        "name": "FJW",
+        "SMB": "FMF-SMARTBOX12",
+        "AdapterPort": "7878",
+        "AgentPort": "5000"},
+
+        {"id":34,
+        "name": "FH6800   MFMS19-MC1",
+        "SMB": "FMF-SMARTBOX1",
+        "AdapterPort": "7878",
+        "AgentPort": "5000"},
+
+        {"id":35,
+        "name": "FH6800   MFMS19-MC2",
+        "SMB": "FMF-SMARTBOX1",
+        "AdapterPort": "7878",
+        "AgentPort": "5001"},
+
+        {"id":36,
+        "name": "FH6800   MFMS19-MC3",
+        "SMB": "FMF-SMARTBOX1",
+        "AdapterPort": "7878",
+        "AgentPort": "5002"},
+
+        {"id":37,
+        "name": "FH6800   MFMS19-MC4",
+        "SMB": "FMF-SMARTBOX1",
+        "AdapterPort": "7878",
+        "AgentPort": "5003"},
+
+        {"id":38,
+        "name": "FH6800   MFMS19-MC5",
+        "SMB": "FMF-SMARTBOX1",
+        "AdapterPort": "7878",
+        "AgentPort": "5004"},
+
+        {"id":39,
+        "name": "FH6800   MFMS19-MC6",
+        "SMB": "FMF-SMARTBOX1",
+        "AdapterPort": "7878",
+        "AgentPort": "5005"}
+
+
+
+
+    ]}
+    
+]

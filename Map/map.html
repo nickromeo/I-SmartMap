@@ -1,0 +1,153 @@
+<html>
+    <head><link rel="stylesheet" href="leaflet.css"/><link rel="stylesheet" href="map.css"/> <!--Put the path to the leaflet.css  you downloaded here -->
+    <script src="leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<header>
+    <title>Mazak I-SmartFactory</title>
+    <br>
+    <img src="mazak.png" class="img"/>
+    <h1 class="text-center">Welcome to the Map</h1>
+    
+</header>
+<br>
+<body class="back">
+    <div class="container text-center">
+    <div class="row">
+    <map class="col">
+        <div id = "map" style = "width:980px; height:740px;"></div> <!--set the size of your map -->
+        <script type="text/javascript" src="map.js"></script>
+    </map>
+      <div class="col dropdown">
+        
+        
+        <br><br>
+        
+    <h2 class="text-center">
+        Select
+    </h2>
+
+      <select id="SM" class="drpdwn" oninput="getdata()" onchange="disableFirst(this)">
+        <option id="first">Choose an SmartBox:</option>
+        <option value="0">FMF-SMARTBOX1</option>
+        <option value="1">FAB-SMARTBOX1</option>
+        <option value="2">FMF-SMARTBOX2</option>
+        <option value="3">FMF-SMARTBOX3</option>
+        <option value="4">FMF-SMARTBOX5</option>
+        <option value="5">FMF-SMARTBOX8</option>
+        <option value="6">FMF-SMARTBOX9</option>
+        <option value="7">FMF-SMARTBOX10</option>
+        <option value="8">FMF-SMARTBOX11</option>
+        <option value="9">FMF-SMARTBOX12</option>
+        <option value="10">FMF-SMARTBOX13</option>
+      </select>
+      <br>
+    <br>
+      
+    <select id="CNC" class="drpdwn" oninput="getdataCNC()" onchange="disableFirst1(this)">
+      <option id="first1">Choose a CNC:</option>
+      <option value="0">VRX-0</option>
+      <option value="1">VRX-1</option>
+      <option value="2">V100-0</option>
+      <option value="3">V100-1</option>
+      <option value="4">V100-2</option>
+      <option value="5">V100-3</option>
+      <option value="6">i-400</option>
+      <option value="7">i-400ST</option>
+      <option value="8">i-300S</option>
+      <option value="9">QTN450MYLBB</option>
+      <option value="10">QTZ250MY2T</option>
+      <option value="11">e-500-0</option>
+      <option value="12">e-500-1</option>
+      <option value="13">QTN350M</option>
+      <option value="14">e-1060</option>
+      <option value="15">HCN8800-0</option>
+      <option value="16">HCN8800-1</option>
+      <option value="17">Orbitec</option>
+      <option value="18">MU10800</option>
+      <option value="19">HCN16000Q MFMS18-MC1</option>
+      <option value="20">SHIGIYA GP-55</option>
+      <option value="21">SHIGIYA GP-85</option>
+      <option value="22">SHIGIYA GP-30B</option>
+      <option value="23">Toyoda</option>
+      <option value="24">Milacron ID</option>
+      <option value="25">Toyo NC ID</option>
+      <option value="26">Toyo TVG-90C</option>
+      <option value="27">QTN400</option>
+      <option value="28">FJV-35/60</option>
+      <option value="29">FJV-35/120</option>
+      <option value="30">V140n5x</option>
+      <option value="31">MU8800</option>
+      <option value="32">FJW</option>
+      <option value="33">FH6800 MFMS19-MC1</option>
+      <option value="34">FH6800 MFMS19-MC2</option>
+      <option value="35">FH6800 MFMS19-MC3</option>
+      <option value="36">FH6800 MFMS19-MC4</option>
+      <option value="37">FH6800 MFMS19-MC5</option>
+      <option value="38">FH6800 MFMS19-MC6</option>
+    </select>
+      <br>
+      <br>
+      <select id="myselect" onchange="change_myselect(this.value)">
+        <option value="">Choose a Bay:</option>
+        <option value="1">Bay 1</option>
+        <option value="2">Bay 2</option>
+        <option value="3">Bay3</option>
+      </select>
+      <br>
+      <br>
+      <select id="myselect" onchange="change_myselect(this.value)">
+        <option value="">Choose a Server:</option>
+        <option value="S1">S1(192.168.54.10)</option>
+        <option value="S2">S2(192.168.54.11)</option>
+        <option value="S3">S3(192.168.54.12)</option>
+      </select>
+      <br>
+      <br>
+    <!-- <button onclick="SetOff()">off</button>
+    <button onclick="SetOn()">on</button> -->
+      </div>
+    </div>
+    <br>
+    
+    <div class="row">
+      <div class="col">
+        <p id="SMBB">
+          
+        </p>
+      </div>
+      <div class="col">
+        <p id="CNCB">
+
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+function disableFirst(first){
+  if(first.value == 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10){
+    document.getElementById('first').disabled = true
+  } 
+}
+
+function disableFirst1(first1){
+  if(first.value == 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10){
+    document.getElementById('first1').disabled = true
+  } 
+}
+</script>
+
+
+
+
+
+
+
+
+
+</html>
