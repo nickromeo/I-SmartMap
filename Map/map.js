@@ -4,14 +4,14 @@ var map = L.map('map',
     maxBoundsViscosity: 1.0
 }).setView([47.5, -81.7735599], 6.4);
 
-var circle12 = L.circle([47.9, -73.95], {
+var circle12 = L.circle([44.9, -73.95], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle13 = L.circle([48.1, -73.95], {
+var circle13 = L.circle([46.1, -73.95], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
@@ -32,14 +32,14 @@ var circle1 = L.circle([43.5, -83.24], {
     radius: 4000
 }).addTo(map);
 
-var circle = L.circle([44.5, -84.24], {
+var circle = L.circle([43, -74], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle3 = L.circle([47.532, -82.24], {
+var circle3 = L.circle([46.0, -75.0], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
@@ -53,7 +53,7 @@ var circle5 = L.circle([46.5, -80.24], {
     radius: 4000
 }).addTo(map);
 
-var circle8 = L.circle([47.35, -80.54], {
+var circle8 = L.circle([45.0, -78.0], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
@@ -61,7 +61,7 @@ var circle8 = L.circle([47.35, -80.54], {
 }).addTo(map);
 
 
-var circle9 = L.circle([48.5, -83.1], {
+var circle9 = L.circle([44.5, -75.5], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.7,
@@ -97,8 +97,8 @@ var osm = L.tileLayer('bsqaure.jpg', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
-//var imageUrl = 'map.png';
 var imageUrl = 'RealMap.png';
+//var imageUrl = 'TestMap.png';
 var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
 var altText = 'map of thing';
 var corner1 = L.latLng(40, -86.602603),
