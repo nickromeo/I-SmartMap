@@ -1,9 +1,15 @@
 
+
+// sets the starting map view
 var map = L.map('map',
 {
     maxBoundsViscosity: 1.0
 }).setView([47.5, -81.7735599], 6.4);
 
+
+
+
+// all clickable circles
 var circle12 = L.circle([47.9, -73.95], {
     color: 'black',
     fillColor: '#ff6600',
@@ -60,7 +66,6 @@ var circle8 = L.circle([47.35, -80.54], {
     radius: 4000
 }).addTo(map);
 
-
 var circle9 = L.circle([48.5, -83.1], {
     color: 'black',
     fillColor: '#ff6600',
@@ -91,20 +96,26 @@ var circle11 = L.circle([46.5, -75.24], {
 //     [48.1, -74.99]
 // ]).addTo(map);
 
-var osm = L.tileLayer('bsqaure.jpg', {
-    minZoom: 5,
+
+// background image with max and min view
+var osm = L.tileLayer('HTMLimage/whiteb.png', {
+    minZoom: 2,
     mazZoom: 13,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
 
 //var imageUrl = 'map.png';
-var imageUrl = 'RealMap.png';
+var imageUrl = 'HTMLimage/RealMap.png';
 var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
 var altText = 'map of thing';
+
+//this is where the map is set to
 var corner1 = L.latLng(40, -86.602603),
 corner2 = L.latLng(50, -68),
 bounds = L.latLngBounds(corner1, corner2);
-map.setMaxBounds([[40.5, -86], [49.5, -68.5]]);
+
+// this is the max boundry you can scoll on the map
+map.setMaxBounds([[40.5, -84], [48.5, -68.5]]);
 
 var imageOverlay = L.imageOverlay(imageUrl, bounds, {
     errorOverlayUrl: errorOverlayUrl,
@@ -136,7 +147,7 @@ document.getElementById('map').style.cursor='grab';
 }
 
 
-
+// Function that creates the SmartBox box below the map  
 function getdata(){
     selectElement = document.querySelector("#SM");
     output = selectElement.value
@@ -180,7 +191,7 @@ fetch("data.json")
 
 
 };
-
+// Function that creates the CNC box below the map 
 function getdataCNC(){
     selectElement1 = document.querySelector("#CNC");
     output1 = selectElement1.value
@@ -220,7 +231,7 @@ function zoomTo(){
 };
 
 
-
+// all of the circle popup data
 circle.bindPopup("FMF-SMARTBOX1 <br>IP: (172.26.70.10-172.26.70.11)<br> Adapters IP: (192.168.0.11-192.168.0.20) <br> Agent IP: 172.26.70.35, 172.26.70.23");
 
 circle1.bindPopup("FAB-SMARTBOX1 <br>IP: (172.26.70.34-172.26.70.35)<br> Adapters IP: (192.168.0.10(MITS adapter), 192.168.0.11-192.168.0.13, 192.168.0.15) <br> Agent IP: 172.26.70.11 <br> <a href=http://${item.SM[output].Admin}>")
