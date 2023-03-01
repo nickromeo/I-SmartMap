@@ -93,15 +93,17 @@ table.blueTable {
 }
 
 .img{
-  width: 250px;
+  width: 350px;
   height: 70px;
-  float: right;
-  padding-right: 150px;
+  float: left;
+  padding-left: 50px;
 
 
 }
 .h1{
 position: relative;
+text-align: center;
+padding-right: 550px;
 
 }
 

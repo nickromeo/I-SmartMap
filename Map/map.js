@@ -3,8 +3,9 @@
 // sets the starting map view
 var map = L.map('map',
 {
+  
     maxBoundsViscosity: 1.0
-}).setView([47.5, -81.7735599], 6.4);
+}).setView([44.40, -77.7735599], 6.4);
 
 
 
@@ -96,10 +97,14 @@ var circle11 = L.circle([46.5, -75.24], {
 //     [48.1, -74.99]
 // ]).addTo(map);
 
+map.on('click', function(e) {
+  console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+});
+
 
 // background image with max and min view
 var osm = L.tileLayer('HTMLimage/whiteb.png', {
-    minZoom: 2,
+    minZoom: 4.75,
     mazZoom: 13,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
 }).addTo(map);
@@ -110,12 +115,12 @@ var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
 var altText = 'map of thing';
 
 //this is where the map is set to
-var corner1 = L.latLng(40, -86.602603),
-corner2 = L.latLng(50, -68),
+var corner1 = L.latLng(40, -88),
+corner2 = L.latLng(50, -64),
 bounds = L.latLngBounds(corner1, corner2);
 
 // this is the max boundry you can scoll on the map
-map.setMaxBounds([[40.5, -84], [48.5, -68.5]]);
+map.setMaxBounds([[53, -96.88], [35.5, -52.5]]);
 
 var imageOverlay = L.imageOverlay(imageUrl, bounds, {
     errorOverlayUrl: errorOverlayUrl,
@@ -174,10 +179,10 @@ fetch("data.json")
               <td>Adapter: ${item.SM[output].Adapters_IP}</td>
             </tr>
             <tr>
-              <td>Agent IP: ${item.SM[output].Agent_IP}</td>
+              <td><a href=http://${item.SM[output].Agent_IP} target="_blank">Active Agents: ${item.SM[output].Agent_IP}</a></td>
             </tr>
             <tr>
-            <td><a href=http://${item.SM[output].Admin}>${item.SM[output].Admin}</a></td>
+            <td><a href=http://${item.SM[output].Admin} target="_blank">IOS ${item.SM[output].Admin}</a></td>
             </tr>
           </tbody>
         </table>                         
