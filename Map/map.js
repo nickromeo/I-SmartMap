@@ -110,7 +110,7 @@ var osm = L.tileLayer('HTMLimage/whiteb.png', {
 }).addTo(map);
 
 //var imageUrl = 'map.png';
-var imageUrl = 'HTMLimage/RealMap.png';
+var imageUrl = 'HTMLimage/TestMap.png';
 var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
 var altText = 'map of thing';
 
