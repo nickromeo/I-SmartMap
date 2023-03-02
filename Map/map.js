@@ -11,14 +11,14 @@ var map = L.map('map',
 
 
 // all clickable circles
-var circle12 = L.circle([47.9, -73.95], {
+var circle12 = L.circle([44.9, -73.95], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle13 = L.circle([48.1, -73.95], {
+var circle13 = L.circle([46.1, -73.95], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
@@ -39,14 +39,14 @@ var circle1 = L.circle([43.5, -83.24], {
     radius: 4000
 }).addTo(map);
 
-var circle = L.circle([44.5, -84.24], {
+var circle = L.circle([43, -74.0], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle3 = L.circle([47.532, -82.24], {
+var circle3 = L.circle([46.0, -75.0], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
@@ -60,14 +60,14 @@ var circle5 = L.circle([46.5, -80.24], {
     radius: 4000
 }).addTo(map);
 
-var circle8 = L.circle([47.35, -80.54], {
+var circle8 = L.circle([45.0, -78.0], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle9 = L.circle([48.5, -83.1], {
+var circle9 = L.circle([44.5, -75.5], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.7,
