@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <link rel="stylesheet" href="/Map/style.css">
+</head>
+<body>
+    <main>
+        <h2>Sign In</h2>
+        <form role="form" onsubmit="signIn(event);" autocomplete="off">
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="pwd" id="pwd" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Sign In</button>
+            </div>
+        </form>
+        <p>Don't have an account? <a href="/Map/register.html">Sign Up</a> here</p>
+    </main>
+
+    <script type="text/javascript" src="/Map/login.js"></script>
+</body>
+</html>
