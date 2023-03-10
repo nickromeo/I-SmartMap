@@ -15,77 +15,77 @@ var circle12 = L.circle([42.75, -79.28], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
-    radius: 4000
+    radius: 7500
 }).addTo(map);
 
 var circle13 = L.circle([47.10, -81.61], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
-    radius: 4000
+    radius: 7500
 }).addTo(map);
 
 var circle2 = L.circle([45.43, -79.10], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
-    radius: 4000
+    radius: 7500
 }).addTo(map);
 
 var circle1 = L.circle([46.03, -74.07], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
-    radius: 4000
+    radius: 7500
 }).addTo(map);
 
 var circle = L.circle([45.50, -79.51], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
-    radius: 4000
+    radius: 7500
 }).addTo(map);
 
 var circle3 = L.circle([45.35, -79.44], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
-    radius: 4000
+    radius: 7500
 }).addTo(map);
 
 var circle5 = L.circle([44.07, -78.32], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
-    radius: 4000
+    radius: 7500
 }).addTo(map);
 
 var circle8 = L.circle([47.10, -81.41], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
-    radius: 4000
+    radius: 7500
 }).addTo(map);
 
 var circle9 = L.circle([44.29, -81.28], {
     color: 'black',
     fillColor: '#ff6600',
-    fillOpacity: 0.7,
-    radius: 4000
+    fillOpacity: 0.9,
+    radius: 7500
 }).addTo(map);
 
 var circle10 = L.circle([44.92, -80.93], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
-    radius: 4000
+    radius: 7500
 }).addTo(map);
 
 var circle11 = L.circle([44.53, -81.86], {
     color: 'black',
     fillColor: '#ff6600',
-    fillOpacity: 0.5,
-    radius: 4000
+    fillOpacity: 0.9,
+    radius: 7500
 }).addTo(map);
 
 
@@ -151,6 +151,31 @@ if (map.tap) map.tap.enable();
 document.getElementById('map').style.cursor='grab';
 }
 
+function Pinger_ping(ip, callback) 
+{
+  if(!this.inUse) {
+
+    this.inUse = true;
+    this.callback = callback
+    this.ip = '172.26.70.34';
+
+    var _that = this;
+
+    this.img = new Image();
+
+    this.img.onload = function() {_that.good();};
+    this.img.onerror = function() {_that.good();};
+
+    this.start = new Date().getTime();
+    this.img.src = "http://" + ip;
+    this.timer = setTimeout(function() { _that.bad();}, 1500);
+  }
+}
+
+
+
+
+
 
 // Function that creates the SmartBox box below the map  
 function getdata(){
@@ -161,10 +186,8 @@ fetch("data.json")
 .then( (data) => {
     data.forEach(item => {
         console.log(item)
-        map.zoomOut(1);
         document.querySelector("#SMBB").innerHTML = 
-        `
-        
+        ` 
         <table class="orangeTable">
           <thead>
             <tr>
@@ -184,18 +207,20 @@ fetch("data.json")
             <tr>
             <td>IOS: <a href=http://${item.SM[output].Admin} target="_blank">${item.SM[output].Admin}</a></td>
             </tr>
+            <tr>
+            <td>Status: </td>
+            </tr>
           </tbody>
         </table>                         
         `;
-        map.zoomIn(3.5);
-        map.flyTo(item.SM[output].Cords);
-        
-
+        map.flyTo([item.SM[output].Cords[0], item.SM[output].Cords[1]], 10, {
+          animate: true,
+          duration: 2 // in seconds
+        });
     }) ;   
 })
-
-
 };
+
 // Function that creates the CNC box below the map 
 function getdataCNC(){
     selectElement1 = document.querySelector("#CNC");
