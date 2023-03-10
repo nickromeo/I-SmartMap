@@ -232,18 +232,18 @@ function getdataCNC(){
 })};
 
 function zoomTo(){
-
+  target="_blank"
 };
 
 
 // all of the circle popup data
-circle.bindPopup("FMF-SMARTBOX1 <br>IP: (172.26.70.10-172.26.70.11)<br> Adapters IP: (192.168.0.11-192.168.0.20) <br> Agent IP: 172.26.70.35, 172.26.70.23");
+circle.bindPopup(`<b>FMF-SMARTBOX1</b> <br><b>IOS:</b>172.26.70.10<a href=https://172.26.70.10/ target="_blank"> Management</a><br>  <b>IOX:</b>172.26.70.11<a href=https://172.26.70.11:8443 target="_blank"> Management</a><br> <b>Active Agents:</b> MC1, MC2, MC3, MC4<a href=http://172.26.70.11:5010 target="_blank"> Management</a>`);
 
-circle1.bindPopup("FAB-SMARTBOX1 <br>IP: (172.26.70.34-172.26.70.35)<br> Adapters IP: (192.168.0.10(MITS adapter), 192.168.0.11-192.168.0.13, 192.168.0.15) <br> Agent IP: 172.26.70.11 <br> <a href=http://${item.SM[output].Admin}>")
+circle1.bindPopup(`<b>FAB-SMARTBOX1</b> <br><b>IOS:</b>172.26.70.34<a href=https://172.26.70.34/ target="_blank"> Management</a><br>  <b>IOX:</b>172.26.70.35<a href=https://172.26.70.35:8443 target="_blank"> Management</a><br> <b>Active Agents:</b> MC1-10 <a href=http://172.26.70.35:5010 target="_blank"> Management</a>`)
 
-circle2.bindPopup("FMF-SMARTBOX2 <br>IP: (172.26.70.13-172.26.70.14)<br> Adapters IP: (192.168.0.11-192.168.0.13, 192.168.0.15-192.168.0.18) <br> Agent IP: 172.26.70.14");
+circle2.bindPopup(`<b>FMF-SMARTBOX2</b> <br><b>IOS:</b>172.26.70.13<a href=https://172.26.70.13/ target="_blank"> Management</a><br>  <b>IOX:</b>172.26.70.14<a href=https://172.26.70.14:8443 target="_blank"> Management</a><br> <b>Active Agents:</b> MC1-8 <a href=http://172.26.70.14:5010 target="_blank"> Management</a>`);
 
-circle3.bindPopup("FMF-SMARTBOX3 <br>IP: (172.26.70.16-172.26.70.17)<br>Adapters IP: 192.168.0.11-192.168.0.12 <br> Agent IP: 172.26.70.17");
+circle3.bindPopup(`<b>FMF-SMARTBOX3</b> <br><b>IOS:</b>172.26.70.16<a href=https://172.26.70.16/ target="_blank"> Management</a><br>  <b>IOX:</b>172.26.70.17<a href=https://172.26.70.17:8443 target="_blank"> Management</a><br> <b>Active Agents:</b> MC1, MC2 <a href=http://172.26.70.17:5010 target="_blank"> Management</a>`);
 
 circle5.bindPopup("FMF-SMARTBOX5 <br>IP: (172.26.70.22-172.26.70.23)<br> Adapters IP: 192.168.0.11, 192.168.0.12, 192.168.0.14, 192.168.0.15, 192.168.0.17, 192.168.0.19, 192.168.0.22, 192.168.0.24 <br> Agent IP: 172.26.70.23  <br> L2NAT: 172.26.70.24 => 172.26.81.157, 172.26.70.25 => 172.26.81.157");
 
