@@ -11,77 +11,77 @@ var map = L.map('map',
 
 
 // all clickable circles
-var circle12 = L.circle([44.9, -73.95], {
+var circle12 = L.circle([42.75, -79.28], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle13 = L.circle([46.1, -73.95], {
+var circle13 = L.circle([47.10, -81.61], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle2 = L.circle([43.5, -77.95], {
+var circle2 = L.circle([45.43, -79.10], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle1 = L.circle([43.5, -83.24], {
+var circle1 = L.circle([46.03, -74.07], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle = L.circle([43, -74.0], {
+var circle = L.circle([45.50, -79.51], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle3 = L.circle([46.0, -75.0], {
+var circle3 = L.circle([45.35, -79.44], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle5 = L.circle([46.5, -80.24], {
+var circle5 = L.circle([44.07, -78.32], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle8 = L.circle([45.0, -78.0], {
+var circle8 = L.circle([47.10, -81.41], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle9 = L.circle([44.5, -75.5], {
+var circle9 = L.circle([44.29, -81.28], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.7,
     radius: 4000
 }).addTo(map);
 
-var circle10 = L.circle([44.420, -80.5], {
+var circle10 = L.circle([44.92, -80.93], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.9,
     radius: 4000
 }).addTo(map);
 
-var circle11 = L.circle([46.5, -75.24], {
+var circle11 = L.circle([44.53, -81.86], {
     color: 'black',
     fillColor: '#ff6600',
     fillOpacity: 0.5,
@@ -179,10 +179,10 @@ fetch("data.json")
               <td>Adapter: ${item.SM[output].Adapters_IP}</td>
             </tr>
             <tr>
-              <td><a href=http://${item.SM[output].Agent_IP} target="_blank">Active Agents: ${item.SM[output].Agent_IP}</a></td>
+              <td>Active Agents: <a href=http://${item.SM[output].Agent_IP} target="_blank">${item.SM[output].Agent_IP}</a></td>
             </tr>
             <tr>
-            <td><a href=http://${item.SM[output].Admin} target="_blank">IOS ${item.SM[output].Admin}</a></td>
+            <td>IOS: <a href=http://${item.SM[output].Admin} target="_blank">${item.SM[output].Admin}</a></td>
             </tr>
           </tbody>
         </table>                         
