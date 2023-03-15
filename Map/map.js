@@ -151,26 +151,94 @@ if (map.tap) map.tap.enable();
 document.getElementById('map').style.cursor='grab';
 }
 
-function Pinger_ping(ip, callback) 
-{
-  if(!this.inUse) {
 
-    this.inUse = true;
-    this.callback = callback
-    this.ip = '172.26.70.34';
 
-    var _that = this;
+// THESE ARE JUST TESTING WAYS TO PARSE XML DATA FROM MTCONNECT TO DISPLAY ON THE WEB PAGE
 
-    this.img = new Image();
 
-    this.img.onload = function() {_that.good();};
-    this.img.onerror = function() {_that.good();};
 
-    this.start = new Date().getTime();
-    this.img.src = "http://" + ip;
-    this.timer = setTimeout(function() { _that.bad();}, 1500);
-  }
-}
+
+
+// function checkDaAgent() {
+//   selectElement = document.querySelector("#SM");
+//   output = selectElement.value
+// fetch("data.json")
+// .then(response => response.json())
+// .then( (data) => {
+//   data.forEach(item => {
+
+//   var xmlhttp = new XMLHttpRequest();
+//   xmlhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//       myFunction(this);
+//     }
+//   };
+//   xmlhttp.open("GET", `http://${item.SM[output].Agent_IP}:5000/current?path=//DataItem[@type="AVAILABILITY"]`, true);
+//   xmlhttp.send();
+//   document.getElementById("demo").innerHTML
+
+// });
+// });
+// }
+
+// function checkDaAgent(xml){
+// var x, i, xmlDoc, txt;
+// xmlDoc = xml.responseXML;
+// txt = "Hello";
+// x = xmlDoc.getElementsByTagName("Availability");
+// for (i = 0; i < x.length; i++) {
+//     txt += x[i].childNodes[0].nodeValue + "<br>";
+// }
+// document.getElementById("demo").innerHTML = txt;
+
+
+// }
+
+    // let xmlContent = '';
+    // let availabileCHk = document.getElementById('demo');
+    // fetch(`http://${item.SM[output].Agent_IP}:5000/current?path=//DataItem[@type="AVAILABILITY"]`).then((response)=>{
+    //   response.text().then((xml)=>{
+    //     let parser = new DOMParser();
+    //     let xmlDOM = parser.parseFromString(xmlContent,'text/xml');
+    //     let CNC = xmlDOM.querySelectorAll('Availability')
+    //     CNC.forEach(XMLNode => {
+    //       let p = document.createElement('p')
+    //       p.innerHTML = XMLNode.children[0].innerHTML;
+
+     
+
+//   });
+// });
+
+//   selectElement = document.querySelector("#SM");
+//   output = selectElement.value
+// fetch("data.json")
+// .then(response => response.json())
+// .then( (data) => {
+//   data.forEach(item => {
+//     var parseXml;
+
+//     if (typeof window.DOMParser != "undefined") {
+//         parseXml = function(xmlStr) {
+//             return ( new window.DOMParser() ).parseFromString(xmlStr, "text/xml");
+//         };
+//     } else if (typeof window.ActiveXObject != "undefined" &&
+//            new window.ActiveXObject(`http://${item.SM[output].Agent_IP}:5000/current?path=//DataItem[@type="AVAILABILITY"]`)) {
+//         parseXml = function(xmlStr) {
+//             var xmlDoc = new window.ActiveXObject(`http://${item.SM[output].Agent_IP}:5000/current?path=//DataItem[@type="AVAILABILITY"]`);
+//             xmlDoc.async = "false";
+//             xmlDoc.loadXML(xmlStr);
+//             return xmlDoc;
+//         };
+//     } else {
+//         throw new Error("No XML parser found");
+//     }
+//     var xml = parseXml("<Availability>AVAILABLE</Availability>");
+//     document.getElementById("demo").innerHTML = "FUck you: " + xml.documentElement.nodeName;
+//   })
+// })
+  
+
 
 
 
@@ -213,9 +281,9 @@ fetch("data.json")
           </tbody>
         </table>                         
         `;
-        map.flyTo([item.SM[output].Cords[0], item.SM[output].Cords[1]], 10, {
+        map.flyTo([item.SM[output].Cords[0], item.SM[output].Cords[1]], 9, {
           animate: true,
-          duration: 2 // in seconds
+          duration: 1 // in seconds
         });
     }) ;   
 })

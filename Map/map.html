@@ -30,7 +30,7 @@
         <br>
     </h2>
       <!--SmartBox dropdown -->
-      <select id="SM" class="drpdwn" oninput="getdata()" onchange="disableFirst(this)">
+      <select id="SM" class="drpdwn" oninput="getdata(); checkDaAgent()" onchange="disableFirst(this)">
         <option id="first">Choose an SmartBox:</option>
         <option value="0">FMF-SMARTBOX1</option>
         <option value="1">FAB-SMARTBOX1</option>
@@ -112,6 +112,9 @@
     <br>
     <div class="row">
       <div class="col">
+        <p id="demo">
+
+        </p>
         <p id="SMBB">
           
         </p>
