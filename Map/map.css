@@ -88,8 +88,87 @@ table.blueTable {
     font-weight: bold;
   }
 
+  table.greenTable {
+    border: 3px solid #0aac0a;
+    background-color: #EEEEEE;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+  table.greenTable td, table.greenTable th {
+    border: 2px solid #AAAAAA;
+    padding: 6px 7px;
+  }
+  table.greenTable tbody td {
+    font-size: 17px;
+    color: #000000;
+  }
+  table.greenTable thead {
+    background: #0aac0a;
+    background: -moz-linear-gradient(top, #0aac0a 0%, #0aac0a 66%, #0aac0a 100%);
+    background: -webkit-linear-gradient(top, #0aac0a 0%, #0aac0a 66%, #0aac0a 100%);
+    background: linear-gradient(to bottom, #0aac0a 0%, #0aac0a 66%, #0aac0a 100%);
+    border-bottom: 2px solid #000000;
+  }
+  table.greenTable thead th {
+    font-size: 21px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #D0E4F5;
+  }
+  table.greenTable thead th:first-child {
+    border-left: none;
+  }
+  
+  table.greenTable tfoot {
+    font-weight: bold;
+  }
+
+  table.redTable {
+    border: 3px solid #d30707;
+    background-color: #EEEEEE;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+  }
+  table.redTable td, table.redTable th {
+    border: 2px solid #AAAAAA;
+    padding: 6px 7px;
+  }
+  table.redTable tbody td {
+    font-size: 17px;
+    color: #000000;
+  }
+  table.redTable thead {
+    background: #d30707;
+    background: -moz-linear-gradient(top, #d30707 0%, #d30707 66%, #d30707 100%);
+    background: -webkit-linear-gradient(top, #d30707 0%, #d30707 66%, #d30707 100%);
+    background: linear-gradient(to bottom, #d30707 0%, #d30707 66%, #d30707 100%);
+    border-bottom: 2px solid #000000;
+  }
+  table.redTable thead th {
+    font-size: 21px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #D0E4F5;
+  }
+  table.redTable thead th:first-child {
+    border-left: none;
+  }
+  
+  table.redTable tfoot {
+    font-weight: bold;
+  }
+
+
+
+
+  
 .back {
   background: #858585;
+padding-right: 50px;
 }
 
 .img{
@@ -124,3 +203,5 @@ padding-right: 550px;
   border: 1px solid #333333;
   border-radius: 4px;
 }
+
+

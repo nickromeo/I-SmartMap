@@ -1,3 +1,4 @@
+//  import  checkAvailability from 'C:/Users/nromeo/OneDrive - Mazak Corporation/Desktop/github/I-SmartMap/Map/front-end-function.js'
 
 
 // sets the starting map view
@@ -152,99 +153,6 @@ document.getElementById('map').style.cursor='grab';
 }
 
 
-
-// THESE ARE JUST TESTING WAYS TO PARSE XML DATA FROM MTCONNECT TO DISPLAY ON THE WEB PAGE
-
-
-
-
-
-// function checkDaAgent() {
-//   selectElement = document.querySelector("#SM");
-//   output = selectElement.value
-// fetch("data.json")
-// .then(response => response.json())
-// .then( (data) => {
-//   data.forEach(item => {
-
-//   var xmlhttp = new XMLHttpRequest();
-//   xmlhttp.onreadystatechange = function() {
-//     if (this.readyState == 4 && this.status == 200) {
-//       myFunction(this);
-//     }
-//   };
-//   xmlhttp.open("GET", `http://${item.SM[output].Agent_IP}:5000/current?path=//DataItem[@type="AVAILABILITY"]`, true);
-//   xmlhttp.send();
-//   document.getElementById("demo").innerHTML
-
-// });
-// });
-// }
-
-// function checkDaAgent(xml){
-// var x, i, xmlDoc, txt;
-// xmlDoc = xml.responseXML;
-// txt = "Hello";
-// x = xmlDoc.getElementsByTagName("Availability");
-// for (i = 0; i < x.length; i++) {
-//     txt += x[i].childNodes[0].nodeValue + "<br>";
-// }
-// document.getElementById("demo").innerHTML = txt;
-
-
-// }
-
-    // let xmlContent = '';
-    // let availabileCHk = document.getElementById('demo');
-    // fetch(`http://${item.SM[output].Agent_IP}:5000/current?path=//DataItem[@type="AVAILABILITY"]`).then((response)=>{
-    //   response.text().then((xml)=>{
-    //     let parser = new DOMParser();
-    //     let xmlDOM = parser.parseFromString(xmlContent,'text/xml');
-    //     let CNC = xmlDOM.querySelectorAll('Availability')
-    //     CNC.forEach(XMLNode => {
-    //       let p = document.createElement('p')
-    //       p.innerHTML = XMLNode.children[0].innerHTML;
-
-     
-
-//   });
-// });
-
-//   selectElement = document.querySelector("#SM");
-//   output = selectElement.value
-// fetch("data.json")
-// .then(response => response.json())
-// .then( (data) => {
-//   data.forEach(item => {
-//     var parseXml;
-
-//     if (typeof window.DOMParser != "undefined") {
-//         parseXml = function(xmlStr) {
-//             return ( new window.DOMParser() ).parseFromString(xmlStr, "text/xml");
-//         };
-//     } else if (typeof window.ActiveXObject != "undefined" &&
-//            new window.ActiveXObject(`http://${item.SM[output].Agent_IP}:5000/current?path=//DataItem[@type="AVAILABILITY"]`)) {
-//         parseXml = function(xmlStr) {
-//             var xmlDoc = new window.ActiveXObject(`http://${item.SM[output].Agent_IP}:5000/current?path=//DataItem[@type="AVAILABILITY"]`);
-//             xmlDoc.async = "false";
-//             xmlDoc.loadXML(xmlStr);
-//             return xmlDoc;
-//         };
-//     } else {
-//         throw new Error("No XML parser found");
-//     }
-//     var xml = parseXml("<Availability>AVAILABLE</Availability>");
-//     document.getElementById("demo").innerHTML = "FUck you: " + xml.documentElement.nodeName;
-//   })
-// })
-  
-
-
-
-
-
-
-
 // Function that creates the SmartBox box below the map  
 function getdata(){
     selectElement = document.querySelector("#SM");
@@ -285,6 +193,54 @@ fetch("data.json")
           animate: true,
           duration: 1 // in seconds
         });
+
+        const Url = `http://${item.SM[output].Agent_IP}:5000/current`
+        if (checkAvailability(Url)){
+          console.log(checkAvailability(Url))
+          document.querySelector("#demo").innerHTML  = 
+        ` 
+        <table class="greenTable">
+          <thead>
+            <tr>
+              <th>${item.SM[output].name}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SMB is Avalible</td>
+            </tr>
+            <tr>
+              <td>Agent 1 is working</td>
+            </tr>
+          </tbody>
+        </table>                         
+        `;
+        }
+         else  {
+        document.querySelector("#demo").innerHTML  = 
+        ` 
+        <table class="redTable">
+          <thead>
+            <tr>
+              <th>${item.SM[output].name}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SMB is Unavalible</td>
+            </tr>
+            <tr>
+              <td>Agent 1 is not working</td>
+            </tr>
+            <tr>
+              <td>Error Message: hello </td>
+            </tr>
+          </tbody>
+        </table>                         
+        `;
+        console.log(error);
+
+      }
     }) ;   
 })
 };
@@ -329,6 +285,8 @@ function zoomTo(){
 };
 
 
+
+
 // all of the circle popup data
 circle.bindPopup(`<b>FMF-SMARTBOX1</b> <br><b>IOS:</b>172.26.70.10<a href=https://172.26.70.10/ target="_blank"> Management</a><br>  <b>IOX:</b>172.26.70.11<a href=https://172.26.70.11:8443 target="_blank"> Management</a><br> <b>Active Agents:</b> MC1, MC2, MC3, MC4<a href=http://172.26.70.11:5010 target="_blank"> Management</a>`);
 
@@ -351,3 +309,46 @@ circle11.bindPopup("FMF-SMARTBOX11 <br>IP: (172.26.70.43-172.26.70.44)<br>Adapte
 circle12.bindPopup("FMF-SMARTBOX12 <br>IP: (172.26.70.46-172.26.70.47)<br>Adapters IP: 192.168.0.11(SM), <br>172.26.70.48(v2 agent on server)<br> Agent IP: 172.26.70.47, 172.26.81.157");
 
 circle13.bindPopup("FMF-SMARTBOX13 <br>IP: (172.26.70.50-172.26.70.51)<br>Adapters IP: (192.168.0.11-192.168.0.16), (172.26.70.68-172.26.70.72), 172.26.70.80<br> Agent IP: 172.26.70.51, 172.26.70.157");
+
+
+
+async function checkAvailability(targetUrl) {
+  try {
+      // URL of the proxy server, with the availability endpoint
+      const apiUrl = 'http://localhost:3000/api/availability';
+
+      // Fetch the data from the proxy server
+      //* Updated to use the POST method to send the target URL
+      const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ targetUrl })
+      });
+      
+      if (!response.ok) {
+          // If the response does not have the "OK" status, throw an error
+          throw new Error('Error fetching availability');
+      }
+
+      // Parse the JSON response into a JavaScript object
+      const data = await response.json();
+      const available = data.availability === 'AVAILABLE'; // Evaluates to true if the availability is "AVAILABLE"
+
+      // Log the result to the console
+      // TODO: Remove this line when the testing is complete
+      console.log('Availability:', available);
+
+  } catch (error) {
+      // Log any errors to the console
+      console.log(error);
+  }
+}
+
+
+// To import into front-end:
+// import { checkAvailability } from ./path/to/file
+
+// Sample function call with URL
+// checkAvailability('http://mtconnect.mazakcorp.com:5611/current');
